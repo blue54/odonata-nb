@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Periods - Odonata of NB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Extra styles for sortable table & reset button */
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+        th.sortable::after {
+            content: ' ↕';  /* up-down arrow hint */
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+        th.sorted-asc::after { content: ' ↑'; opacity: 1; }
+        th.sorted-desc::after { content: ' ↓'; opacity: 1; }
+        .reset-btn {
+            margin: 1rem 0;
+            padding: 0.6rem 1.2rem;
+            background: #2e5d34;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .reset-btn:hover { background: #3a7a44; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Odonata of NB</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profiles.html">Species Profiles</a></li>
+                    <li><a href="flight.html" class="active">Flight Periods</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Flight Periods</h2>
+        <p>Earliest ("From") and latest ("To") observation dates in New Brunswick (sample data; replace with your full maintained list of ~145 species).</p>
+        <p>Click "From" or "To" headers to sort by start/end of flight season. Use the reset button to return to taxonomic order (damselflies first, then dragonflies, approximate family/species sequence).</p>
+
+        <button class="reset-btn" onclick="resetTable()">Reset to Taxonomic Order</button>
+
+        <div class="table-wrapper">
+            <table id="flightTable">
+                <thead>
+                    <tr>
+                        <th>Species</th>
+                        <th class="sortable" onclick="sortTable(1)">From</th>
+                        <th class="sortable" onclick="sortTable(2)">To</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Taxonomic-ish order: Damselflies first, then Dragonflies -->
+                    <!-- Broad-winged Damselflies -->
+                    <tr>
+                        <td>River Jewelwing <em>Calopteryx aequabilis</em></td>
+                        <td>May 30</td>
+                        <td>Aug 28</td>
+                    </tr>
+                    <tr>
+                        <td>Ebony Jewelwing <em>Calopteryx maculata</em></td>
+                        <td>Jun 1</td>
+                        <td>Sep 22</td>
+                    </tr>
+                    <!-- Darners -->
+                    <tr>
+                        <td>Canada Darner <em>Aeshna canadensis</em></td>
+                        <td>Jun 14</td>
+                        <td>Oct 14</td>
+                    </tr>
+                    <!-- Skimmers -->
+                    <tr>
+                        <td>Twelve-spotted Skimmer <em>Libellula pulchella</em></td>
+                        <td>Jun 10</td>
+                        <td>Sep 15</td>
+                    </tr>
+                    <tr>
+                        <td>Autumn Meadowhawk <em>Sympetrum vicinum</em></td>
+                        <td>Jul 20</td>
+                        <td>Nov 5</td>
+                    </tr>
+                    <!-- Add your full list here as more <tr> rows, e.g.:
+                    <tr>
+                        <td>Northern Bluet <em>Enallagma annexum</em></td>
+                        <td>May 15</td>
+                        <td>Sep 10</td>
+                    </tr>
+                    ... and so on -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Odonata of New Brunswick | Maintained by [Your Name – replace this]</p>
+            <p>Last updated: February 26, 2026 | More resources: 
+                <a href="https://www.inaturalist.org" target="_blank">iNaturalist</a> | 
+                <a href="https://www.odonatacentral.org" target="_blank">OdonataCentral</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple table sort function (string-based, toggles asc/desc)
+        function sortTable(colIndex) {
+            const table = document.getElementById("flightTable");
+            const tbody = document.getElementById("tableBody");
+            const rows = Array.from(tbody.rows);
+
+            // Toggle direction
+            const header = table.querySelectorAll('th.sortable')[colIndex - 1];
+            const isAsc = !header.classList.contains('sorted-asc');
+
+            // Remove previous sort classes
+            document.querySelectorAll('th.sortable').forEach(th => {
+                th.classList.remove('sorted-asc', 'sorted-desc');
+            });
+
+            // Sort rows
+            rows.sort((a, b) => {
+                const aVal = a.cells[colIndex].innerText.trim();
+                const bVal = b.cells[colIndex].innerText.trim();
+                return isAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+            });
+
+            // Re-append sorted rows
+            rows.forEach(row => tbody.appendChild(row));
+
+            // Update header indicator
+            header.classList.add(isAsc ? 'sorted-asc' : 'sorted-desc');
+        }
+
+        // Reset to original taxonomic order (reloads the static HTML order)
+        function resetTable() {
+            const tbody = document.getElementById("tableBody");
+            // Remove sort indicators
+            document.querySelectorAll('th.sortable').forEach(th => {
+                th.classList.remove('sorted-asc', 'sorted-desc');
+            });
+            // To truly reset, we can reload the page (simplest), or re-order if you store original
+            location.reload();  // Quick & reliable for static list
+        }
+    </script>
+</body>
+</html>

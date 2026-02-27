@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odonata of New Brunswick - Dragonflies & Damselflies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hero banner with your Dragonhunter image */
+        .hero {
+            position: relative;
+            height: 60vh;               /* 60% of viewport height – adjust if needed */
+            min-height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)),
+                        url('images/dragonhunter-banner.jpg') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+        }
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+        }
+        .hero h2 {
+            font-size: 3.5rem;
+            margin: 0 0 0.5rem;
+        }
+        .hero p.subtitle {
+            font-size: 1.6rem;
+            margin: 0 0 2rem;
+            opacity: 0.95;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-btn {
+            background: #6b4c2e;
+            color: white;
+            padding: 1rem 2.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta-btn:hover {
+            background: #8a6640;
+        }
+        .intro-section {
+            padding: 4rem 0 3rem;
+            background: #f8f5f0;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.5rem; }
+            .hero p.subtitle { font-size: 1.3rem; }
+            .cta-buttons { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Odonata of NB</h1>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="profiles.html">Species List</a></li>
+                    <li><a href="flight.html">Flight Periods</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Odonata of New Brunswick</h2>
+            <p class="subtitle">143 confirmed species of dragonflies & damselflies</p>
+            <div class="cta-buttons">
+                <a href="profiles.html" class="cta-btn">Browse All Species</a>
+                <a href="flight.html" class="cta-btn">View Flight Seasons</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <h3>Explore New Brunswick's Odonata</h3>
+            <p>With 143 species recorded in the province, New Brunswick is home to a remarkable diversity of these aerial predators and wetland indicators. This site features detailed profiles, photographs, flight seasons, and distribution notes — curated over 15+ years of fieldwork and observation.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Odonata of New Brunswick | Maintained by [Your Name – replace this]</p>
+            <p>Last updated: February 26, 2026 | More resources: 
+                <a href="https://www.inaturalist.org" target="_blank">iNaturalist</a> | 
+                <a href="https://www.odonatacentral.org" target="_blank">OdonataCentral</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

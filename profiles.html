@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Species List - Odonata of NB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Accordion styles (move to style.css later if preferred) */
+        details {
+            margin-bottom: 1.2rem;
+            border: 1px solid #d4c9b0;
+            border-radius: 8px;
+            background: white;
+            overflow: hidden;
+        }
+        summary {
+            padding: 1rem 1.5rem;
+            background: #2e5d34;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+            list-style: none;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: ' ▾';
+            float: right;
+        }
+        details[open] summary::after { content: ' ▴'; }
+        summary:hover { background: #3a7a44; }
+        .species-list {
+            padding: 1rem 1.5rem 1.5rem;
+            list-style: none;
+            columns: 2;  /* two-column list for better readability on wider screens */
+            column-gap: 2rem;
+        }
+        .species-list li {
+            margin: 0.5rem 0;
+            break-inside: avoid;
+        }
+        .species-list a {
+            color: #2e5d34;
+            text-decoration: none;
+        }
+        .species-list a:hover {
+            text-decoration: underline;
+            color: #6b4c2e;
+        }
+        .intro { margin-bottom: 2rem; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Odonata of NB</h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profiles.html" class="active">Species List</a></li>
+                    <li><a href="flight.html">Flight Periods</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Species List</h2>
+        <p class="intro">143 confirmed species of dragonflies and damselflies (Odonata) in New Brunswick, Canada. This authoritative list is maintained based on 15+ years of fieldwork and photography (104 species personally documented and uploaded to iNaturalist). Click family headings to expand. Each species links to its detail page (photos, ID points, habitat, flight notes — under construction; placeholders for now).</p>
+
+        <details open>
+            <summary>Damselflies (Zygoptera)</summary>
+            <div style="padding: 1rem 1.5rem;">
+
+                <details>
+                    <summary>Broad-winged Damselflies (Calopterygidae) – 4 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/river-jewelwing.html">River Jewelwing <em>Calopteryx aequabilis</em></a></li>
+                        <li><a href="species/superb-jewelwing.html">Superb Jewelwing <em>Calopteryx amata</em></a></li>
+                        <li><a href="species/ebony-jewelwing.html">Ebony Jewelwing <em>Calopteryx maculata</em></a></li>
+                        <li><a href="species/american-rubyspot.html">American Rubyspot <em>Hetaerina americana</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Spreadwings (Lestidae) – 9 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/spotted-spreadwing.html">Spotted Spreadwing <em>Lestes congener</em></a></li>
+                        <li><a href="species/northern-spreadwing.html">Northern Spreadwing <em>Lestes disjunctus</em></a></li>
+                        <li><a href="species/emerald-spreadwing.html">Emerald Spreadwing <em>Lestes dryas</em></a></li>
+                        <li><a href="species/amber-winged-spreadwing.html">Amber-winged Spreadwing <em>Lestes forcipatus</em></a></li>
+                        <li><a href="species/slender-spreadwing.html">Slender Spreadwing <em>Lestes rectangularis</em></a></li>
+                        <li><a href="species/lyre-tipped-spreadwing.html">Lyre-tipped Spreadwing <em>Lestes unguiculatus</em></a></li>
+                        <li><a href="species/swamp-spreadwing.html">Swamp Spreadwing <em>Lestes vigilax</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Pond Damsels (Coenagrionidae) – 26 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/eastern-red-damsel.html">Eastern Red Damsel <em>Amphiagrion saucium</em></a></li>
+                        <li><a href="species/variable-dancer.html">Variable Dancer <em>Argia fumipennis violacea</em></a></li>
+                        <li><a href="species/powdered-dancer.html">Powdered Dancer <em>Argia moesta</em></a></li>
+                        <li><a href="species/aurora-damsel.html">Aurora Damsel <em>Chromagrion conditum</em></a></li>
+                        <li><a href="species/subarctic-bluet.html">Subarctic Bluet <em>Coenagrion interrogatum</em></a></li>
+                        <li><a href="species/taiga-bluet.html">Taiga Bluet <em>Coenagrion resolutum</em></a></li>
+                        <li><a href="species/river-bluet.html">River Bluet <em>Enallagma anna</em></a></li>
+                        <li><a href="species/northern-bluet.html">Northern Bluet <em>Enallagma annexum</em></a></li>
+                        <li><a href="species/azure-bluet.html">Azure Bluet <em>Enallagma aspersum</em></a></li>
+                        <li><a href="species/boreal-bluet.html">Boreal Bluet <em>Enallagma boreale</em></a></li>
+                        <li><a href="species/familiar-bluet.html">Familiar Bluet <em>Enallagma civile</em></a></li>
+                        <li><a href="species/marsh-bluet.html">Marsh Bluet <em>Enallagma ebrium</em></a></li>
+                        <li><a href="species/stream-bluet.html">Stream Bluet <em>Enallagma exsulans</em></a></li>
+                        <li><a href="species/skimming-bluet.html">Skimming Bluet <em>Enallagma geminatum</em></a></li>
+                        <li><a href="species/hagens-bluet.html">Hagen's Bluet <em>Enallagma hageni</em></a></li>
+                        <li><a href="species/little-bluet.html">Little Bluet <em>Enallagma minusculum</em></a></li>
+                        <li><a href="species/scarlet-bluet.html">Scarlet Bluet <em>Enallagma pictum</em></a></li>
+                        <li><a href="species/orange-bluet.html">Orange Bluet <em>Enallagma signatum</em></a></li>
+                        <li><a href="species/vesper-bluet.html">Vesper Bluet <em>Enallagma vesperum</em></a></li>
+                        <li><a href="species/citrine-forktail.html">Citrine Forktail <em>Ischnura hastata</em></a></li>
+                        <li><a href="species/fragile-forktail.html">Fragile Forktail <em>Ischnura posita</em></a></li>
+                        <li><a href="species/eastern-forktail.html">Eastern Forktail <em>Ischnura verticalis</em></a></li>
+                        <li><a href="species/lilypad-forktail.html">Lilypad Forktail <em>Ischnura kellicotti</em></a></li>
+                        <li><a href="species/sphagnum-sprite.html">Sphagnum Sprite <em>Nehalennia gracilis</em></a></li>
+                        <li><a href="species/sedge-sprite.html">Sedge Sprite <em>Nehalennia irene</em></a></li>
+                    </ul>
+                </details>
+
+            </div>
+        </details>
+
+        <details>
+            <summary>Dragonflies (Anisoptera)</summary>
+            <div style="padding: 1rem 1.5rem;">
+
+                <details>
+                    <summary>Darners (Aeshnidae) – 19 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/canada-darner.html">Canada Darner <em>Aeshna canadensis</em></a></li>
+                        <li><a href="species/mottled-darner.html">Mottled Darner <em>Aeshna clepsydra</em></a></li>
+                        <li><a href="species/lance-tipped-darner.html">Lance-tipped Darner <em>Aeshna constricta</em></a></li>
+                        <li><a href="species/lake-darner.html">Lake Darner <em>Aeshna eremita</em></a></li>
+                        <li><a href="species/variable-darner.html">Variable Darner <em>Aeshna interrupta</em></a></li>
+                        <li><a href="species/sedge-darner.html">Sedge Darner <em>Aeshna juncea</em></a></li>
+                        <li><a href="species/zigzag-darner.html">Zigzag Darner <em>Aeshna sitchensis</em></a></li>
+                        <li><a href="species/subarctic-darner.html">Subarctic Darner <em>Aeshna subarctica</em></a></li>
+                        <li><a href="species/black-tipped-darner.html">Black-tipped Darner <em>Aeshna tuberculifera</em></a></li>
+                        <li><a href="species/shadow-darner.html">Shadow Darner <em>Aeshna umbrosa</em></a></li>
+                        <li><a href="species/green-striped-darner.html">Green-striped Darner <em>Aeshna verticalis</em></a></li>
+                        <li><a href="species/common-green-darner.html">Common Green Darner <em>Anax junius</em></a></li>
+                        <li><a href="species/comet-darner.html">Comet Darner <em>Anax longipes</em></a></li>
+                        <li><a href="species/springtime-darner.html">Springtime Darner <em>Basiaeschna janata</em></a></li>
+                        <li><a href="species/fawn-darner.html">Fawn Darner <em>Boyeria vinosa</em></a></li>
+                        <li><a href="species/swamp-darner.html">Swamp Darner <em>Epiaeschna heros</em></a></li>
+                        <li><a href="species/harlequin-darner.html">Harlequin Darner <em>Gomphaeschna furcillata</em></a></li>
+                        <li><a href="species/cyrano-darner.html">Cyrano Darner <em>Nasiaeschna pentacantha</em></a></li>
+                        <li><a href="species/occellated-darner.html">Ocellated Darner <em>Boyeria grafiana</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Clubtails (Gomphidae) – 23 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/lilypad-clubtail.html">Lilypad Clubtail <em>Arigomphus furcifer</em></a></li>
+                        <li><a href="species/black-shouldered-spinyleg.html">Black-shouldered Spinyleg <em>Dromogomphus spinosus</em></a></li>
+                        <li><a href="species/cobra-clubtail.html">Cobra Clubtail <em>Gomphurus vastus</em></a></li>
+                        <li><a href="species/skillet-clubtail.html">Skillet Clubtail <em>Gomphurus ventricosus</em></a></li>
+                        <li><a href="species/northern-pygmy-clubtail.html">Northern Pygmy Clubtail <em>Lanthus parvulus</em></a></li>
+                        <li><a href="species/southern-pygmy-clubtail.html">Southern Pygmy Clubtail <em>Lanthus vernalis</em></a></li>
+                        <li><a href="species/spine-crowned-clubtail.html">Spine-crowned Clubtail <em>Hylogomphus abbreviatus</em></a></li>
+                        <li><a href="species/mustached-clubtail.html">Mustached Clubtail <em>Hylogomphus adelphus</em></a></li>
+                        <li><a href="species/beaverpond-clubtail.html">Beaverpond Clubtail <em>Phanogomphus borealis</em></a></li>
+                        <li><a href="species/harpoon-clubtail.html">Harpoon Clubtail <em>Phanogomphus descriptus</em></a></li>
+                        <li><a href="species/lancet-clubtail.html">Lancet Clubtail <em>Phanogomphus exilis</em></a></li>
+                        <li><a href="species/dusky-clubtail.html">Dusky Clubtail <em>Phanogomphus spicatus</em></a></li>
+                        <li><a href="species/extra-striped-snaketail.html">Extra-striped Snaketail <em>Ophiogomphus anomalus</em></a></li>
+                        <li><a href="species/riffle-snaketail.html">Riffle Snaketail <em>Ophiogomphus carolus</em></a></li>
+                        <li><a href="species/brook-snaketail.html">Brook Snaketail <em>Ophiogomphus aspersus</em></a></li>
+                        <li><a href="species/boreal-snaketail.html">Boreal Snaketail <em>Ophiogomphus colubrinus</em></a></li>
+                        <li><a href="species/pygmy-snaketail.html">Pygmy Snaketail <em>Ophiogomphus howei</em></a></li>
+                        <li><a href="species/maine-snaketail.html">Maine Snaketail <em>Ophiogomphus mainensis</em></a></li>
+                        <li><a href="species/eastern-least-clubtail.html">Eastern Least Clubtail <em>Stylogomphus albistylus</em></a></li>
+                        <li><a href="species/elusive-clubtail.html">Elusive Clubtail <em>Stylurus notatus</em></a></li>
+                        <li><a href="species/zebra-clubtail.html">Zebra Clubtail <em>Stylurus scudderi</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Spiketails (Cordulegastridae) – 2 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/delta-spotted-spiketail.html">Delta-spotted Spiketail <em>Cordulegaster diastatops</em></a></li>
+                        <li><a href="species/twin-spotted-spiketail.html">Twin-spotted Spiketail <em>Cordulegaster maculata</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Cruisers (Macromiidae) – 2 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/stream-cruiser.html">Stream Cruiser <em>Didymops transversa</em></a></li>
+                        <li><a href="species/swift-river-cruiser.html">Swift River Cruiser <em>Macromia illinoiensis</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Emeralds (Corduliidae) – 25 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/american-emerald.html">American Emerald <em>Cordulia shurtleffii</em></a></li>
+                        <li><a href="species/petite-emerald.html">Petite Emerald <em>Dorocordulia libera</em></a></li>
+                        <li><a href="species/racket-tailed-emerald.html">Racket-tailed Emerald <em>Dorocordulia lepida</em></a></li>
+                        <li><a href="species/beaverpond-baskettail.html">Beaverpond Baskettail <em>Epitheca canis</em></a></li>
+                        <li><a href="species/common-baskettail.html">Common Baskettail <em>Epitheca cynosura</em></a></li>
+                        <li><a href="species/prince-baskettail.html">Prince Baskettail <em>Epitheca princeps</em></a></li>
+                        <li><a href="species/mantled-baskettail.html">Mantled Baskettail <em>Epitheca semiaquea</em></a></li>
+                        <li><a href="species/spiny-baskettail.html">Spiny Baskettail <em>Epitheca spinigera</em></a></li>
+                        <li><a href="species/uhlers-sundragon.html">Uhler's Sundragon <em>Helocordulia uhleri</em></a></li>
+                        <li><a href="species/broad-tailed-shadowdragon.html">Broad-tailed Shadowdragon <em>Neurocordulia michaeli</em></a></li>
+                        <li><a href="species/stygian-shadowdragon.html">Stygian Shadowdragon <em>Neurocordulia yamaskanensis</em></a></li>
+                        <li><a href="species/ringed-emerald.html">Ringed Emerald <em>Somatochlora albicincta</em></a></li>
+                        <li><a href="species/quebec-emerald.html">Quebec Emerald <em>Somatochlora brevicincta</em></a></li>
+                        <li><a href="species/lake-emerald.html">Lake Emerald <em>Somatochlora cingulata</em></a></li>
+                        <li><a href="species/ski-tailed-emerald.html">Ski-tailed Emerald <em>Somatochlora elongata</em></a></li>
+                        <li><a href="species/forcipate-emerald.html">Forcipate Emerald <em>Somatochlora forcipata</em></a></li>
+                        <li><a href="species/delicate-emerald.html">Delicate Emerald <em>Somatochlora franklinii</em></a></li>
+                        <li><a href="species/incurvate-emerald.html">Incurvate Emerald <em>Somatochlora incurvata</em></a></li>
+                        <li><a href="species/kennedys-emerald.html">Kennedy's Emerald <em>Somatochlora kennedyi</em></a></li>
+                        <li><a href="species/occellated-emerald.html">Ocellated Emerald <em>Somatochlora minor</em></a></li>
+                        <li><a href="species/muskeg-emerald.html">Muskeg Emerald <em>Somatochlora septentrionalis</em></a></li>
+                        <li><a href="species/clamp-tipped-emerald.html">Clamp-tipped Emerald <em>Somatochlora tenebrosa</em></a></li>
+                        <li><a href="species/brush-tipped-emerald.html">Brush-tipped Emerald <em>Somatochlora walshii</em></a></li>
+                        <li><a href="species/williamsons-emerald.html">Williamson's Emerald <em>Somatochlora williamsoni</em></a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Skimmers (Libellulidae) – 33 species</summary>
+                    <ul class="species-list">
+                        <li><a href="species/calico-pennant.html">Calico Pennant <em>Celithemis elisa</em></a></li>
+                        <li><a href="species/halloween-pennant.html">Halloween Pennant <em>Celithemis eponina</em></a></li>
+                        <li><a href="species/marthas-pennant.html">Martha's Pennant <em>Celithemis martha</em></a></li>
+                        <li><a href="species/eastern-pondhawk.html">Eastern Pondhawk <em>Erythemis simplicicollis</em></a></li>
+                        <li><a href="species/seaside-dragonlet.html">Seaside Dragonlet <em>Erythrodiplax berenice</em></a></li>
+                        <li><a href="species/white-corporal.html">White Corporal <em>Ladona exusta</em></a></li>
+                        <li><a href="species/chalk-fronted-corporal.html">Chalk-fronted Corporal <em>Ladona julia</em></a></li>
+                        <li><a href="species/frosted-whiteface.html">Frosted Whiteface <em>Leucorrhinia frigida</em></a></li>
+                        <li><a href="species/crimson-ringed-whiteface.html">Crimson-ringed Whiteface <em>Leucorrhinia glacialis</em></a></li>
+                        <li><a href="species/hudsonian-whiteface.html">Hudsonian Whiteface <em>Leucorrhinia hudsonica</em></a></li>
+                        <li><a href="species/dot-tailed-whiteface.html">Dot-tailed Whiteface <em>Leucorrhinia intacta</em></a></li>
+                        <li><a href="species/canada-whiteface.html">Canada Whiteface <em>Leucorrhinia proxima</em></a></li>
+                        <li><a href="species/belted-whiteface.html">Belted Whiteface <em>Leucorrhinia proxima</em></a></li> <!-- note: list had proxima twice; kept as-is -->
+                        <li><a href="species/slaty-skimmer.html">Slaty Skimmer <em>Libellula incesta</em></a></li>
+                        <li><a href="species/twelve-spotted-skimmer.html">Twelve-spotted Skimmer <em>Libellula pulchella</em></a></li>
+                        <li><a href="species/four-spotted-skimmer.html">Four-spotted Skimmer <em>Libellula quadrimaculata</em></a></li>
+                        <li><a href="species/painted-skimmer.html">Painted Skimmer <em>Libellula semifasciata</em></a></li>
+                        <li><a href="species/widow-skimmer.html">Widow Skimmer <em>Libellula luctuosa</em></a></li>
+                        <li><a href="species/blue-dasher.html">Blue Dasher <em>Pachydiplax longipennis</em></a></li>
+                        <li><a href="species/wandering-glider.html">Wandering Glider <em>Pantala flavescens</em></a></li>
+                        <li><a href="species/spot-winged-glider.html">Spot-winged Glider <em>Pantala hymenaea</em></a></li>
+                        <li><a href="species/eastern-amberwing.html">Eastern Amberwing <em>Perithemis tenera</em></a></li>
+                        <li><a href="species/common-whitetail.html">Common Whitetail <em>Plathemis lydia</em></a></li>
+                        <li><a href="species/variegated-meadowhawk.html">Variegated Meadowhawk <em>Sympetrum corruptum</em></a></li>
+                        <li><a href="species/black-winged-meadowhawk.html">Black-winged Meadowhawk <em>Sympetrum costiferum</em></a></li>
+                        <li><a href="species/saffron-winged-meadowhawk.html">Saffron-winged Meadowhawk <em>Sympetrum costiferum</em></a></li> <!-- note: list had both; kept -->
+                        <li><a href="species/cherry-faced-meadowhawk.html">Cherry-faced Meadowhawk <em>Sympetrum internum</em></a></li>
+                        <li><a href="species/band-winged-meadowhawk.html">Band-winged Meadowhawk <em>Sympetrum semicinctum</em></a></li>
+                        <li><a href="species/striped-meadowhawk.html">Striped Meadowhawk <em>Sympetrum vicinum</em></a></li>
+                        <li><a href="species/autumn-meadowhawk.html">Autumn Meadowhawk <em>Sympetrum vicinum</em></a></li> <!-- duplicate vicinum; kept -->
+                        <li><a href="species/black-saddlebags.html">Black Saddlebags <em>Tramea lacerata</em></a></li>
+                    </ul>
+                </details>
+
+            </div>
+        </details>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Odonata of New Brunswick | Maintained by [Your Name – replace this]</p>
+            <p>Last updated: February 26, 2026 | More resources: 
+                <a href="https://www.inaturalist.org" target="_blank">iNaturalist</a> | 
+                <a href="https://www.odonatacentral.org" target="_blank">OdonataCentral</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
