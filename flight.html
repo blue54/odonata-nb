@@ -57,7 +57,7 @@
 
     <main class="container">
         <h2>Flight Periods</h2>
-        <p class="intro">Earliest ("From") and latest ("To") observation dates for all 143 confirmed species in New Brunswick (updated March 9, 2026 from iNaturalist and personal records). Click "From" or "To" to sort by date. Use "Reset" to return to taxonomic order. Species names link to detailed profiles.</p>
+        <p class="intro">Earliest ("From") and latest ("To") observation dates for all 143 confirmed species in New Brunswick (updated March 9, 2026 from iNaturalist and personal records). Click "From" or "To" to sort **within each family group**. Family headers remain fixed. Use "Reset" to return to original taxonomic order.</p>
 
         <button class="reset-btn" onclick="resetTable()">Reset to Taxonomic Order</button>
 
@@ -71,7 +71,6 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-
                     <!-- Broad-winged Damselflies -->
                     <tr class="family-header"><td colspan="3">Broad-winged Damselflies (Calopterygidae) – 4 species</td></tr>
                     <tr><td><a href="species/river-jewelwing.html">River Jewelwing <em>Calopteryx aequabilis</em></a></td><td>Jun 2</td><td>Oct 4</td></tr>
@@ -253,28 +252,60 @@
         function sortTable(colIndex) {
             const table = document.getElementById("flightTable");
             const tbody = document.getElementById("tableBody");
-            const rows = Array.from(tbody.rows);
+            const allRows = Array.from(tbody.rows);
 
-            const header = table.querySelectorAll('th.sortable')[colIndex - 1];
-            const isAsc = !header.classList.contains('sorted-asc');
+            // Find all family header rows (they stay fixed)
+            const familyHeaders = allRows.filter(row => row.classList.contains('family-header'));
 
+            // Group data rows by their preceding family header
+            let currentGroup = [];
+            const groups = [];
+            allRows.forEach(row => {
+                if (row.classList.contains('family-header')) {
+                    if (currentGroup.length > 0) {
+                        groups.push(currentGroup);
+                    }
+                    currentGroup = [];
+                } else {
+                    currentGroup.push(row);
+                }
+            });
+            if (currentGroup.length > 0) {
+                groups.push(currentGroup);
+            }
+
+            // Sort each group separately
+            const isAsc = !table.querySelectorAll('th.sortable')[colIndex - 1].classList.contains('sorted-asc');
+
+            groups.forEach(group => {
+                group.sort((a, b) => {
+                    const aVal = a.cells[colIndex].innerText.trim();
+                    const bVal = b.cells[colIndex].innerText.trim();
+                    return isAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+                });
+            });
+
+            // Rebuild tbody: family headers + sorted groups
+            tbody.innerHTML = '';
+            let groupIndex = 0;
+            allRows.forEach(row => {
+                if (row.classList.contains('family-header')) {
+                    tbody.appendChild(row);
+                    // Append sorted data for this group
+                    groups[groupIndex].forEach(dataRow => tbody.appendChild(dataRow));
+                    groupIndex++;
+                }
+            });
+
+            // Update sort indicator
             document.querySelectorAll('th.sortable').forEach(th => {
                 th.classList.remove('sorted-asc', 'sorted-desc');
             });
-
-            rows.sort((a, b) => {
-                const aVal = a.cells[colIndex].innerText.trim();
-                const bVal = b.cells[colIndex].innerText.trim();
-                return isAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
-            });
-
-            rows.forEach(row => tbody.appendChild(row));
-
-            header.classList.add(isAsc ? 'sorted-asc' : 'sorted-desc');
+            table.querySelectorAll('th.sortable')[colIndex - 1].classList.add(isAsc ? 'sorted-asc' : 'sorted-desc');
         }
 
         function resetTable() {
-            location.reload();
+            location.reload(); // Reload original order
         }
     </script>
 </body>
