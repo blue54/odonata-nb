@@ -6,13 +6,12 @@
     <title>Flight Periods - Odonata of NB</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Extra styles for sortable table & reset button */
         th.sortable {
             cursor: pointer;
             user-select: none;
         }
         th.sortable::after {
-            content: ' ↕';  /* up-down arrow hint */
+            content: ' ↕';
             font-size: 0.8em;
             opacity: 0.6;
         }
@@ -29,6 +28,17 @@
             font-size: 1rem;
         }
         .reset-btn:hover { background: #3a7a44; }
+        .intro { margin-bottom: 1.5rem; font-size: 1.1rem; }
+        tr.family-header {
+            background: #2e5d34;
+            color: white;
+            font-weight: bold;
+        }
+        tr.family-header td {
+            text-align: center;
+            padding: 0.8rem;
+        }
+        .table-wrapper { overflow-x: auto; }
     </style>
 </head>
 <body>
@@ -38,7 +48,7 @@
                 <h1>Odonata of NB</h1>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="profiles.html">Species Profiles</a></li>
+                    <li><a href="profiles.html">Species List</a></li>
                     <li><a href="flight.html" class="active">Flight Periods</a></li>
                 </ul>
             </div>
@@ -47,8 +57,7 @@
 
     <main class="container">
         <h2>Flight Periods</h2>
-        <p>Earliest ("From") and latest ("To") observation dates in New Brunswick (sample data; replace with your full maintained list of ~145 species).</p>
-        <p>Click "From" or "To" headers to sort by start/end of flight season. Use the reset button to return to taxonomic order (damselflies first, then dragonflies, approximate family/species sequence).</p>
+        <p class="intro">Earliest ("From") and latest ("To") observation dates for all 143 confirmed species in New Brunswick (updated March 9, 2026 from iNaturalist and personal records). Click "From" or "To" to sort by date. Use "Reset" to return to taxonomic order. Species names link to detailed profiles.</p>
 
         <button class="reset-btn" onclick="resetTable()">Reset to Taxonomic Order</button>
 
@@ -62,42 +71,169 @@
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                    <!-- Taxonomic-ish order: Damselflies first, then Dragonflies -->
+
                     <!-- Broad-winged Damselflies -->
-                    <tr>
-                        <td>River Jewelwing <em>Calopteryx aequabilis</em></td>
-                        <td>May 30</td>
-                        <td>Aug 28</td>
-                    </tr>
-                    <tr>
-                        <td>Ebony Jewelwing <em>Calopteryx maculata</em></td>
-                        <td>Jun 1</td>
-                        <td>Sep 22</td>
-                    </tr>
+                    <tr class="family-header"><td colspan="3">Broad-winged Damselflies (Calopterygidae) – 4 species</td></tr>
+                    <tr><td><a href="species/river-jewelwing.html">River Jewelwing <em>Calopteryx aequabilis</em></a></td><td>Jun 2</td><td>Oct 4</td></tr>
+                    <tr><td><a href="species/superb-jewelwing.html">Superb Jewelwing <em>Calopteryx amata</em></a></td><td>Jun 5</td><td>Jul 30</td></tr>
+                    <tr><td><a href="species/ebony-jewelwing.html">Ebony Jewelwing <em>Calopteryx maculata</em></a></td><td>May 31</td><td>Oct 16</td></tr>
+                    <tr><td><a href="species/american-rubyspot.html">American Rubyspot <em>Hetaerina americana</em></a></td><td>Aug 7</td><td>Oct 16</td></tr>
+
+                    <!-- Spreadwings -->
+                    <tr class="family-header"><td colspan="3">Spreadwings (Lestidae) – 9 species</td></tr>
+                    <tr><td><a href="species/spotted-spreadwing.html">Spotted Spreadwing <em>Lestes congener</em></a></td><td>Jul 13</td><td>Nov 8</td></tr>
+                    <tr><td><a href="species/northern-spreadwing.html">Northern Spreadwing <em>Lestes disjunctus</em></a></td><td>Jul 9</td><td>Sep 15</td></tr>
+                    <tr><td><a href="species/emerald-spreadwing.html">Emerald Spreadwing <em>Lestes dryas</em></a></td><td>Jun 18</td><td>Aug 21</td></tr>
+                    <tr><td><a href="species/amber-winged-spreadwing.html">Amber-winged Spreadwing <em>Lestes forcipatus</em></a></td><td>Jun 12</td><td>Jul 19</td></tr>
+                    <tr><td><a href="species/elegant-spreadwing.html">Elegant Spreadwing <em>Lestes inaequalis</em></a></td><td>Jul 26</td><td>Jul 12</td></tr>
+                    <tr><td><a href="species/lyre-tipped-spreadwing.html">Lyre-tipped Spreadwing <em>Lestes unguiculatus</em></a></td><td>Jul 7</td><td>Sep 28</td></tr>
+                    <tr><td><a href="species/slender-spreadwing.html">Slender Spreadwing <em>Lestes rectangularis</em></a></td><td>Jul 22</td><td>Sep 28</td></tr>
+                    <tr><td><a href="species/swamp-spreadwing.html">Swamp Spreadwing <em>Lestes vigilax</em></a></td><td>Jul 1</td><td>Aug 29</td></tr>
+
+                    <!-- Pond Damsels -->
+                    <tr class="family-header"><td colspan="3">Pond Damsels (Coenagrionidae) – 26 species</td></tr>
+                    <tr><td><a href="species/eastern-red-damsel.html">Eastern Red Damsel <em>Amphiagrion saucium</em></a></td><td>Jun 1</td><td>Jul 23</td></tr>
+                    <tr><td><a href="species/variable-dancer.html">Variable Dancer <em>Argia fumipennis violacea</em></a></td><td>Jun 2</td><td>Sep 29</td></tr>
+                    <tr><td><a href="species/powdered-dancer.html">Powdered Dancer <em>Argia moesta</em></a></td><td>Jun 2</td><td>Sep 29</td></tr>
+                    <tr><td><a href="species/aurora-damsel.html">Aurora Damsel <em>Chromagrion conditum</em></a></td><td>May 25</td><td>Jul 25</td></tr>
+                    <tr><td><a href="species/subarctic-bluet.html">Subarctic Bluet <em>Coenagrion interrogatum</em></a></td><td>May 25</td><td>Jul 7</td></tr>
+                    <tr><td><a href="species/taiga-bluet.html">Taiga Bluet <em>Coenagrion resolutum</em></a></td><td>May 17</td><td>Jul 6</td></tr>
+                    <tr><td><a href="species/river-bluet.html">River Bluet <em>Enallagma anna</em></a></td><td>Jun 4</td><td>Oct 11</td></tr>
+                    <tr><td><a href="species/northern-bluet.html">Northern Bluet <em>Enallagma annexum</em></a></td><td>Jun 4</td><td>Oct 25</td></tr>
+                    <tr><td><a href="species/azure-bluet.html">Azure Bluet <em>Enallagma aspersum</em></a></td><td>Jun 3</td><td>Oct 11</td></tr>
+                    <tr><td><a href="species/boreal-bluet.html">Boreal Bluet <em>Enallagma boreale</em></a></td><td>May 14</td><td>Aug 27</td></tr>
+                    <tr><td><a href="species/tule-bluet.html">Tule Bluet <em>Enallagma carunculatum</em></a></td><td>Aug 11</td><td>Aug 27</td></tr>
+                    <tr><td><a href="species/familiar-bluet.html">Familiar Bluet <em>Enallagma civile</em></a></td><td>Jun 22</td><td>Nov 9</td></tr>
+                    <tr><td><a href="species/marsh-bluet.html">Marsh Bluet <em>Enallagma ebrium</em></a></td><td>Jun 4</td><td>Nov 9</td></tr>
+                    <tr><td><a href="species/stream-bluet.html">Stream Bluet <em>Enallagma exsulans</em></a></td><td>Jun 10</td><td>Sep 3</td></tr>
+                    <tr><td><a href="species/skimming-bluet.html">Skimming Bluet <em>Enallagma geminatum</em></a></td><td>Jun 10</td><td>Sep 3</td></tr>
+                    <tr><td><a href="species/hagens-bluet.html">Hagen's Bluet <em>Enallagma hageni</em></a></td><td>Jul 4</td><td>Aug 25</td></tr>
+                    <tr><td><a href="species/little-bluet.html">Little Bluet <em>Enallagma minusculum</em></a></td><td>Jul 4</td><td>Aug 25</td></tr>
+                    <tr><td><a href="species/scarlet-bluet.html">Scarlet Bluet <em>Enallagma pictum</em></a></td><td>Jul 22</td><td>Sep 27</td></tr>
+                    <tr><td><a href="species/orange-bluet.html">Orange Bluet <em>Enallagma signatum</em></a></td><td>Jul 16</td><td>Sep 27</td></tr>
+                    <tr><td><a href="species/vesper-bluet.html">Vesper Bluet <em>Enallagma vesperum</em></a></td><td>Jun 18</td><td>Aug 27</td></tr>
+                    <tr><td><a href="species/citrine-forktail.html">Citrine Forktail <em>Ischnura hastata</em></a></td><td>May 20</td><td>Oct 16</td></tr>
+                    <tr><td><a href="species/fragile-forktail.html">Fragile Forktail <em>Ischnura posita</em></a></td><td>May 20</td><td>Oct 16</td></tr>
+                    <tr><td><a href="species/eastern-forktail.html">Eastern Forktail <em>Ischnura verticalis</em></a></td><td>Jul 8</td><td>Oct 24</td></tr>
+                    <tr><td><a href="species/lilypad-forktail.html">Lilypad Forktail <em>Ischnura kellicotti</em></a></td><td>Jul 8</td><td>Oct 24</td></tr>
+                    <tr><td><a href="species/sphagnum-sprite.html">Sphagnum Sprite <em>Nehalennia gracilis</em></a></td><td>Jun 8</td><td>Aug 25</td></tr>
+                    <tr><td><a href="species/sedge-sprite.html">Sedge Sprite <em>Nehalennia irene</em></a></td><td>May 8</td><td>Aug 25</td></tr>
+
                     <!-- Darners -->
-                    <tr>
-                        <td>Canada Darner <em>Aeshna canadensis</em></td>
-                        <td>Jun 14</td>
-                        <td>Oct 14</td>
-                    </tr>
+                    <tr class="family-header"><td colspan="3">Darners (Aeshnidae) – 19 species</td></tr>
+                    <tr><td><a href="species/canada-darner.html">Canada Darner <em>Aeshna canadensis</em></a></td><td>Jun 15</td><td>Oct 24</td></tr>
+                    <tr><td><a href="species/mottled-darner.html">Mottled Darner <em>Aeshna clepsydra</em></a></td><td>Aug 15</td><td>Oct 13</td></tr>
+                    <tr><td><a href="species/lance-tipped-darner.html">Lance-tipped Darner <em>Aeshna constricta</em></a></td><td>Aug 22</td><td>Oct 13</td></tr>
+                    <tr><td><a href="species/lake-darner.html">Lake Darner <em>Aeshna eremita</em></a></td><td>Jul 5</td><td>Oct 31</td></tr>
+                    <tr><td><a href="species/variable-darner.html">Variable Darner <em>Aeshna interrupta</em></a></td><td>Jul 5</td><td>Oct 31</td></tr>
+                    <tr><td><a href="species/sedge-darner.html">Sedge Darner <em>Aeshna juncea</em></a></td><td>Jul 4</td><td>Sep 30</td></tr>
+                    <tr><td><a href="species/zigzag-darner.html">Zigzag Darner <em>Aeshna sitchensis</em></a></td><td>Jul 4</td><td>Sep 30</td></tr>
+                    <tr><td><a href="species/subarctic-darner.html">Subarctic Darner <em>Aeshna subarctica</em></a></td><td>Aug 10</td><td>Sep 20</td></tr>
+                    <tr><td><a href="species/black-tipped-darner.html">Black-tipped Darner <em>Aeshna tuberculifera</em></a></td><td>Aug 28</td><td>Sep 21</td></tr>
+                    <tr><td><a href="species/shadow-darner.html">Shadow Darner <em>Aeshna umbrosa</em></a></td><td>Aug 7</td><td>Oct 10</td></tr>
+                    <tr><td><a href="species/green-striped-darner.html">Green-striped Darner <em>Aeshna verticalis</em></a></td><td>Aug 7</td><td>Oct 10</td></tr>
+                    <tr><td><a href="species/common-green-darner.html">Common Green Darner <em>Anax junius</em></a></td><td>Jul 17</td><td>Jul 31</td></tr>
+                    <tr><td><a href="species/comet-darner.html">Comet Darner <em>Anax longipes</em></a></td><td>Jul 17</td><td>Jul 31</td></tr>
+                    <tr><td><a href="species/springtime-darner.html">Springtime Darner <em>Basiaeschna janata</em></a></td><td>Jun 20</td><td>Jul 9</td></tr>
+                    <tr><td><a href="species/fawn-darner.html">Fawn Darner <em>Boyeria vinosa</em></a></td><td>Jul 21</td><td>Nov 5</td></tr>
+                    <tr><td><a href="species/swamp-darner.html">Swamp Darner <em>Epiaeschna heros</em></a></td><td>Jun 21</td><td>Nov 5</td></tr>
+                    <tr><td><a href="species/harlequin-darner.html">Harlequin Darner <em>Gomphaeschna furcillata</em></a></td><td>May 29</td><td>Jul 9</td></tr>
+                    <tr><td><a href="species/cyrano-darner.html">Cyrano Darner <em>Nasiaeschna pentacantha</em></a></td><td>Jun 30</td><td>Jul 8</td></tr>
+                    <tr><td><a href="species/occellated-darner.html">Ocellated Darner <em>Boyeria grafiana</em></a></td><td>Jun 30</td><td>Jul 8</td></tr>
+
+                    <!-- Clubtails -->
+                    <tr class="family-header"><td colspan="3">Clubtails (Gomphidae) – 23 species</td></tr>
+                    <tr><td><a href="species/lilypad-clubtail.html">Lilypad Clubtail <em>Arigomphus furcifer</em></a></td><td>Jun 5</td><td>Sep 7</td></tr>
+                    <tr><td><a href="species/black-shouldered-spinyleg.html">Black-shouldered Spinyleg <em>Dromogomphus spinosus</em></a></td><td>Jun 12</td><td>Jul 17</td></tr>
+                    <tr><td><a href="species/cobra-clubtail.html">Cobra Clubtail <em>Gomphurus vastus</em></a></td><td>Jun 12</td><td>Jul 17</td></tr>
+                    <tr><td><a href="species/skillet-clubtail.html">Skillet Clubtail <em>Gomphurus ventricosus</em></a></td><td>Jun 12</td><td>Jul 17</td></tr>
+                    <tr><td><a href="species/northern-pygmy-clubtail.html">Northern Pygmy Clubtail <em>Lanthus parvulus</em></a></td><td>May 31</td><td>Oct 2</td></tr>
+                    <tr><td><a href="species/southern-pygmy-clubtail.html">Southern Pygmy Clubtail <em>Lanthus vernalis</em></a></td><td>Jun 1</td><td>Jul 20</td></tr>
+                    <tr><td><a href="species/spine-crowned-clubtail.html">Spine-crowned Clubtail <em>Hylogomphus abbreviatus</em></a></td><td>Jun 1</td><td>Jul 20</td></tr>
+                    <tr><td><a href="species/mustached-clubtail.html">Mustached Clubtail <em>Hylogomphus adelphus</em></a></td><td>May 28</td><td>Jul 16</td></tr>
+                    <tr><td><a href="species/beaverpond-clubtail.html">Beaverpond Clubtail <em>Phanogomphus borealis</em></a></td><td>May 17</td><td>Jul 10</td></tr>
+                    <tr><td><a href="species/harpoon-clubtail.html">Harpoon Clubtail <em>Phanogomphus descriptus</em></a></td><td>May 17</td><td>Jul 10</td></tr>
+                    <tr><td><a href="species/lancet-clubtail.html">Lancet Clubtail <em>Phanogomphus exilis</em></a></td><td>May 24</td><td>Jul 21</td></tr>
+                    <tr><td><a href="species/dusky-clubtail.html">Dusky Clubtail <em>Phanogomphus spicatus</em></a></td><td>May 24</td><td>Jul 21</td></tr>
+                    <tr><td><a href="species/extra-striped-snaketail.html">Extra-striped Snaketail <em>Ophiogomphus anomalus</em></a></td><td>Jun 7</td><td>Aug 18</td></tr>
+                    <tr><td><a href="species/brook-snaketail.html">Brook Snaketail <em>Ophiogomphus aspersus</em></a></td><td>Jun 7</td><td>Aug 18</td></tr>
+                    <tr><td><a href="species/riffle-snaketail.html">Riffle Snaketail <em>Ophiogomphus carolus</em></a></td><td>Jan 10</td><td>Sep 1</td></tr>
+                    <tr><td><a href="species/boreal-snaketail.html">Boreal Snaketail <em>Ophiogomphus colubrinus</em></a></td><td>May 7</td><td>Jun 28</td></tr>
+                    <tr><td><a href="species/pygmy-snaketail.html">Pygmy Snaketail <em>Ophiogomphus howei</em></a></td><td>May 7</td><td>Jun 28</td></tr>
+                    <tr><td><a href="species/maine-snaketail.html">Maine Snaketail <em>Ophiogomphus mainensis</em></a></td><td>May 28</td><td>Jun 28</td></tr>
+                    <tr><td><a href="species/rusty-snaketail.html">Rusty Snaketail <em>Ophiogomphus rupinsulensis</em></a></td><td>Jun 4</td><td>Aug 2</td></tr>
+                    <tr><td><a href="species/eastern-least-clubtail.html">Eastern Least Clubtail <em>Stylogomphus albistylus</em></a></td><td>Jun 16</td><td>Aug 2</td></tr>
+                    <tr><td><a href="species/elusive-clubtail.html">Elusive Clubtail <em>Stylurus notatus</em></a></td><td>Jun 30</td><td>Oct 8</td></tr>
+                    <tr><td><a href="species/zebra-clubtail.html">Zebra Clubtail <em>Stylurus scudderi</em></a></td><td>Jun 30</td><td>Oct 8</td></tr>
+
+                    <!-- Spiketails -->
+                    <tr class="family-header"><td colspan="3">Spiketails (Cordulegastridae) – 2 species</td></tr>
+                    <tr><td><a href="species/delta-spotted-spiketail.html">Delta-spotted Spiketail <em>Cordulegaster diastatops</em></a></td><td>May 23</td><td>Aug 5</td></tr>
+                    <tr><td><a href="species/twin-spotted-spiketail.html">Twin-spotted Spiketail <em>Cordulegaster maculata</em></a></td><td>May 28</td><td>Aug 5</td></tr>
+
+                    <!-- Cruisers -->
+                    <tr class="family-header"><td colspan="3">Cruisers (Macromiidae) – 2 species</td></tr>
+                    <tr><td><a href="species/stream-cruiser.html">Stream Cruiser <em>Didymops transversa</em></a></td><td>May 26</td><td>Aug 20</td></tr>
+                    <tr><td><a href="species/swift-river-cruiser.html">Swift River Cruiser <em>Macromia illinoiensis</em></a></td><td>May 26</td><td>Aug 20</td></tr>
+
+                    <!-- Emeralds -->
+                    <tr class="family-header"><td colspan="3">Emeralds (Corduliidae) – 25 species</td></tr>
+                    <tr><td><a href="species/american-emerald.html">American Emerald <em>Cordulia shurtleffii</em></a></td><td>May 14</td><td>Aug 26</td></tr>
+                    <tr><td><a href="species/petite-emerald.html">Petite Emerald <em>Dorocordulia libera</em></a></td><td>May 1</td><td>Aug 24</td></tr>
+                    <tr><td><a href="species/racket-tailed-emerald.html">Racket-tailed Emerald <em>Dorocordulia lepida</em></a></td><td>May 24</td><td>Aug 20</td></tr>
+                    <tr><td><a href="species/beaverpond-baskettail.html">Beaverpond Baskettail <em>Epitheca canis</em></a></td><td>May 12</td><td>Jul 22</td></tr>
+                    <tr><td><a href="species/common-baskettail.html">Common Baskettail <em>Epitheca cynosura</em></a></td><td>May 16</td><td>Jul 28</td></tr>
+                    <tr><td><a href="species/prince-baskettail.html">Prince Baskettail <em>Epitheca princeps</em></a></td><td>May 12</td><td>Jul 28</td></tr>
+                    <tr><td><a href="species/mantled-baskettail.html">Mantled Baskettail <em>Epitheca semiaquea</em></a></td><td>May 23</td><td>Jul 11</td></tr>
+                    <tr><td><a href="species/spiny-baskettail.html">Spiny Baskettail <em>Epitheca spinigera</em></a></td><td>May 23</td><td>Jul 11</td></tr>
+                    <tr><td><a href="species/uhlers-sundragon.html">Uhler's Sundragon <em>Helocordulia uhleri</em></a></td><td>Jun 5</td><td>Jun 13</td></tr>
+                    <tr><td><a href="species/broad-tailed-shadowdragon.html">Broad-tailed Shadowdragon <em>Neurocordulia michaeli</em></a></td><td>Jun 5</td><td>Jun 13</td></tr>
+                    <tr><td><a href="species/stygian-shadowdragon.html">Stygian Shadowdragon <em>Neurocordulia yamaskanensis</em></a></td><td>Jul 4</td><td>Aug 17</td></tr>
+                    <tr><td><a href="species/ringed-emerald.html">Ringed Emerald <em>Somatochlora albicincta</em></a></td><td>Jul 4</td><td>Aug 17</td></tr>
+                    <tr><td><a href="species/quebec-emerald.html">Quebec Emerald <em>Somatochlora brevicincta</em></a></td><td>Jun 2</td><td>Aug 25</td></tr>
+                    <tr><td><a href="species/lake-emerald.html">Lake Emerald <em>Somatochlora cingulata</em></a></td><td>Jun 2</td><td>Aug 25</td></tr>
+                    <tr><td><a href="species/ski-tipped-emerald.html">Ski-tipped Emerald <em>Somatochlora elongata</em></a></td><td>Jun 7</td><td>Oct 8</td></tr>
+                    <tr><td><a href="species/forcipate-emerald.html">Forcipate Emerald <em>Somatochlora forcipata</em></a></td><td>Jun 7</td><td>Oct 8</td></tr>
+                    <tr><td><a href="species/delicate-emerald.html">Delicate Emerald <em>Somatochlora franklinii</em></a></td><td>May 31</td><td>Sep 27</td></tr>
+                    <tr><td><a href="species/incurvate-emerald.html">Incurvate Emerald <em>Somatochlora incurvata</em></a></td><td>May 31</td><td>Sep 27</td></tr>
+                    <tr><td><a href="species/kennedys-emerald.html">Kennedy's Emerald <em>Somatochlora kennedyi</em></a></td><td>Jun 9</td><td>Aug 26</td></tr>
+                    <tr><td><a href="species/occellated-emerald.html">Ocellated Emerald <em>Somatochlora minor</em></a></td><td>Jun 9</td><td>Aug 26</td></tr>
+                    <tr><td><a href="species/muskeg-emerald.html">Muskeg Emerald <em>Somatochlora septentrionalis</em></a></td><td>Jul 6</td><td>Sep 28</td></tr>
+                    <tr><td><a href="species/clamp-tipped-emerald.html">Clamp-tipped Emerald <em>Somatochlora tenebrosa</em></a></td><td>Jul 6</td><td>Sep 28</td></tr>
+                    <tr><td><a href="species/brush-tipped-emerald.html">Brush-tipped Emerald <em>Somatochlora walshii</em></a></td><td>Jun 22</td><td>Sep 22</td></tr>
+                    <tr><td><a href="species/williamsons-emerald.html">Williamson's Emerald <em>Somatochlora williamsoni</em></a></td><td>Jul 7</td><td>Sep 1</td></tr>
+
                     <!-- Skimmers -->
-                    <tr>
-                        <td>Twelve-spotted Skimmer <em>Libellula pulchella</em></td>
-                        <td>Jun 10</td>
-                        <td>Sep 15</td>
-                    </tr>
-                    <tr>
-                        <td>Autumn Meadowhawk <em>Sympetrum vicinum</em></td>
-                        <td>Jul 20</td>
-                        <td>Nov 5</td>
-                    </tr>
-                    <!-- Add your full list here as more <tr> rows, e.g.:
-                    <tr>
-                        <td>Northern Bluet <em>Enallagma annexum</em></td>
-                        <td>May 15</td>
-                        <td>Sep 10</td>
-                    </tr>
-                    ... and so on -->
+                    <tr class="family-header"><td colspan="3">Skimmers (Libellulidae) – 33 species</td></tr>
+                    <tr><td><a href="species/calico-pennant.html">Calico Pennant <em>Celithemis elisa</em></a></td><td>Jun 1</td><td>Aug 31</td></tr>
+                    <tr><td><a href="species/halloween-pennant.html">Halloween Pennant <em>Celithemis eponina</em></a></td><td>Jul 17</td><td>Sep 21</td></tr>
+                    <tr><td><a href="species/marthas-pennant.html">Martha's Pennant <em>Celithemis martha</em></a></td><td>Jun 29</td><td>Aug 31</td></tr>
+                    <tr><td><a href="species/eastern-pondhawk.html">Eastern Pondhawk <em>Erythemis simplicicollis</em></a></td><td>Jun 29</td><td>Aug 31</td></tr>
+                    <tr><td><a href="species/seaside-dragonlet.html">Seaside Dragonlet <em>Erythrodiplax berenice</em></a></td><td>Jul 1</td><td>Aug 16</td></tr>
+                    <tr><td><a href="species/white-corporal.html">White Corporal <em>Ladona exusta</em></a></td><td>May 18</td><td>Oct 16</td></tr>
+                    <tr><td><a href="species/chalk-fronted-corporal.html">Chalk-fronted Corporal <em>Ladona julia</em></a></td><td>May 28</td><td>Oct 16</td></tr>
+                    <tr><td><a href="species/frosted-whiteface.html">Frosted Whiteface <em>Leucorrhinia frigida</em></a></td><td>May 27</td><td>Aug 30</td></tr>
+                    <tr><td><a href="species/crimson-ringed-whiteface.html">Crimson-ringed Whiteface <em>Leucorrhinia glacialis</em></a></td><td>May 27</td><td>Aug 30</td></tr>
+                    <tr><td><a href="species/hudsonian-whiteface.html">Hudsonian Whiteface <em>Leucorrhinia hudsonica</em></a></td><td>May 27</td><td>Aug 30</td></tr>
+                    <tr><td><a href="species/dot-tailed-whiteface.html">Dot-tailed Whiteface <em>Leucorrhinia intacta</em></a></td><td>May 13</td><td>Jul 19</td></tr>
+                    <tr><td><a href="species/canada-whiteface.html">Canada Whiteface <em>Leucorrhinia proxima</em></a></td><td>May 3</td><td>Jul 15</td></tr>
+                    <tr><td><a href="species/slaty-skimmer.html">Slaty Skimmer <em>Libellula incesta</em></a></td><td>May 16</td><td>Aug 11</td></tr>
+                    <tr><td><a href="species/twelve-spotted-skimmer.html">Twelve-spotted Skimmer <em>Libellula pulchella</em></a></td><td>May 8</td><td>Sep 29</td></tr>
+                    <tr><td><a href="species/four-spotted-skimmer.html">Four-spotted Skimmer <em>Libellula quadrimaculata</em></a></td><td>May 8</td><td>Sep 29</td></tr>
+                    <tr><td><a href="species/painted-skimmer.html">Painted Skimmer <em>Libellula semifasciata</em></a></td><td>Jun 9</td><td>Aug 26</td></tr>
+                    <tr><td><a href="species/widow-skimmer.html">Widow Skimmer <em>Libellula luctuosa</em></a></td><td>Jun 9</td><td>Aug 26</td></tr>
+                    <tr><td><a href="species/blue-dasher.html">Blue Dasher <em>Pachydiplax longipennis</em></a></td><td>May 25</td><td>Aug 23</td></tr>
+                    <tr><td><a href="species/wandering-glider.html">Wandering Glider <em>Pantala flavescens</em></a></td><td>Jul 9</td><td>Sep 23</td></tr>
+                    <tr><td><a href="species/spot-winged-glider.html">Spot-winged Glider <em>Pantala hymenaea</em></a></td><td>Jul 9</td><td>Sep 23</td></tr>
+                    <tr><td><a href="species/eastern-amberwing.html">Eastern Amberwing <em>Perithemis tenera</em></a></td><td>Jul 3</td><td>Sep 11</td></tr>
+                    <tr><td><a href="species/common-whitetail.html">Common Whitetail <em>Plathemis lydia</em></a></td><td>May 11</td><td>Sep 13</td></tr>
+                    <tr><td><a href="species/variegated-meadowhawk.html">Variegated Meadowhawk <em>Sympetrum corruptum</em></a></td><td>Aug 3</td><td>Nov 8</td></tr>
+                    <tr><td><a href="species/black-winged-meadowhawk.html">Black-winged Meadowhawk <em>Sympetrum costiferum</em></a></td><td>Aug 3</td><td>Nov 8</td></tr>
+                    <tr><td><a href="species/cherry-faced-meadowhawk.html">Cherry-faced Meadowhawk <em>Sympetrum danae</em></a></td><td>Jul 31</td><td>Oct 30</td></tr>
+                    <tr><td><a href="species/band-winged-meadowhawk.html">Band-winged Meadowhawk <em>Sympetrum semicinctum</em></a></td><td>Jul 30</td><td>Nov 8</td></tr>
+                    <tr><td><a href="species/striped-meadowhawk.html">Striped Meadowhawk <em>Sympetrum vicinum</em></a></td><td>Jun 22</td><td>Nov 27</td></tr>
+                    <tr><td><a href="species/autumn-meadowhawk.html">Autumn Meadowhawk <em>Sympetrum vicinum</em></a></td><td>Jun 22</td><td>Nov 27</td></tr>
+                    <tr><td><a href="species/black-saddlebags.html">Black Saddlebags <em>Tramea lacerata</em></a></td><td>Jun 14</td><td>Sep 24</td></tr>
                 </tbody>
             </table>
         </div>
@@ -105,8 +241,8 @@
 
     <footer>
         <div class="container">
-            <p>Odonata of New Brunswick | Maintained by [Your Name – replace this]</p>
-            <p>Last updated: February 26, 2026 | More resources: 
+            <p>Odonata of New Brunswick | Maintained by [Your Name]</p>
+            <p>Last updated: March 9, 2026 | More resources: 
                 <a href="https://www.inaturalist.org" target="_blank">iNaturalist</a> | 
                 <a href="https://www.odonatacentral.org" target="_blank">OdonataCentral</a>
             </p>
@@ -114,44 +250,31 @@
     </footer>
 
     <script>
-        // Simple table sort function (string-based, toggles asc/desc)
         function sortTable(colIndex) {
             const table = document.getElementById("flightTable");
             const tbody = document.getElementById("tableBody");
             const rows = Array.from(tbody.rows);
 
-            // Toggle direction
             const header = table.querySelectorAll('th.sortable')[colIndex - 1];
             const isAsc = !header.classList.contains('sorted-asc');
 
-            // Remove previous sort classes
             document.querySelectorAll('th.sortable').forEach(th => {
                 th.classList.remove('sorted-asc', 'sorted-desc');
             });
 
-            // Sort rows
             rows.sort((a, b) => {
                 const aVal = a.cells[colIndex].innerText.trim();
                 const bVal = b.cells[colIndex].innerText.trim();
                 return isAsc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
             });
 
-            // Re-append sorted rows
             rows.forEach(row => tbody.appendChild(row));
 
-            // Update header indicator
             header.classList.add(isAsc ? 'sorted-asc' : 'sorted-desc');
         }
 
-        // Reset to original taxonomic order (reloads the static HTML order)
         function resetTable() {
-            const tbody = document.getElementById("tableBody");
-            // Remove sort indicators
-            document.querySelectorAll('th.sortable').forEach(th => {
-                th.classList.remove('sorted-asc', 'sorted-desc');
-            });
-            // To truly reset, we can reload the page (simplest), or re-order if you store original
-            location.reload();  // Quick & reliable for static list
+            location.reload();
         }
     </script>
 </body>
